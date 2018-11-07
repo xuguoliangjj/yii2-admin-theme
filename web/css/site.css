@@ -1,0 +1,48 @@
+html,
+body {
+    height: 100%;
+}
+
+.site-login {
+    margin: 200px auto;
+    width: 375px;
+}
+
+.help-block{
+    color:#FFB800;
+}
+
+.admin-body {
+    background: #eee;
+}
+
+.admin-footer {
+    text-align: center;
+}
+
+.admin-login-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.admin-login-input,.admin-password-input,.admin-input-captcha{
+    padding-left: 38px;
+}
+
+.admin-icon-username,.admin-icon-password, .admin-icon-captcha {
+    position: absolute;
+    width: 38px;
+    line-height: 36px;
+    text-align: center;
+    color: #d2d2d2;
+}
+
+.admin-input-captcha {
+    float: left;
+    width: 60%;
+}
+
+#loginform-verifycode-image {
+    float: right;
+    width: 37%;
+}
