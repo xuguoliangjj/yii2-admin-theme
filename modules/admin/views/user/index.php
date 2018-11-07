@@ -2,29 +2,24 @@
 use \xuguoliangjj\editorgridview\EditorGridView;
 
 
-$this->title = '系统设置';
+$this->title = '用户管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="panel panel-default own-panel">
-    <div class="panel-heading">
-        用户管理
-        <span class="pull-right own-toggle">
-            <a class="glyphicon glyphicon-chevron-up"></a>
-        </span>
+<div class="layui-card">
+    <div class="layui-card-header">
+        <?= $this->title?>
     </div>
-    <div class="panel-body">
+    <div class="layui-card-body">
         <?php
         echo EditorGridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $model,
-            'isDatatable'=>true,
             'buttons'=>[
-                \yii\helpers\Html::a('添加用户',['/admin/user/create'],['class'=>'btn btn-sm btn-primary'])
+                \yii\helpers\Html::a('添加用户',['/admin/user/create'],['class'=>'layui-btn'])
             ],
             'summary'=>'',
             'columns'=>[
-                ['class' => 'yii\grid\ActionColumn'],
                 ['attribute'=>'id','label'=>'序列'],
 
                 ['attribute'=>'username','format'=>'raw','editable'=>['editor',function($model){
@@ -41,10 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 }],
                 ['attribute'=>'updated_at','label'=>'修改时间','value'=>function($model){
                     return Yii::$app->formatter->asDate($model->updated_at,'php:Y-m-d H:i:s');
-                }]
+                }],
+                ['class' => 'xuguoliangjj\editorgridview\ActionColumn']
             ]
         ]);
-
         ?>
     </div>
 </div>

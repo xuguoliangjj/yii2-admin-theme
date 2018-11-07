@@ -55,7 +55,7 @@ class UserSearch extends \app\models\User
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination'=>[
-                'pageSize'=>20
+                'pageSize'=>1
             ]
         ]);
         if (!$this->load($params)) {
