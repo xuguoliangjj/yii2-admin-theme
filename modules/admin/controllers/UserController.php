@@ -7,7 +7,7 @@ use admin\models\AssignmentForm;
 use admin\models\permission\search\UserSearch;
 
 use admin\models\SignupForm;
-use admin\models\User;
+use app\models\User;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use Yii;
@@ -37,6 +37,7 @@ class UserController extends BaseController
      */
     public function actionView($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $model = new AssignmentForm();
         $user = User::findOne($id);
         $model -> setScenario('auth');
@@ -136,6 +137,7 @@ class UserController extends BaseController
      */
     public function actionCreate()
     {
+        $this->layout='@app/views/layouts/empty';
         $model = new SignupForm();
         $model->setScenario('create');
         if ($model->load(Yii::$app->request->post())) {
@@ -173,6 +175,7 @@ class UserController extends BaseController
      */
     public function actionUpdate($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $model = (new SignupForm())->findOne($id);
         $username = $model->username;
         if ($model->load(Yii::$app->request->post())) {

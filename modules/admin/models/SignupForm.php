@@ -1,7 +1,7 @@
 <?php
 namespace admin\models;
 
-use admin\models\User;
+use app\models\User;
 use yii\base\Model;
 use Yii;
 
@@ -85,7 +85,7 @@ class SignupForm extends Model
             'username' => '用户名',
             'email'    => '邮箱',
             'password' => '密码',
-            'repassword' => '再次输入密码',
+            'repassword' => '重复密码',
             'phone' => '手机号',
         ];
     }

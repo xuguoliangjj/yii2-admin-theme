@@ -43,7 +43,7 @@ class BaseController extends Controller
      */
     public function beforeAction($action)
     {
-        if(Yii::$app->user->isGuest && $this->route != 'site/login')
+        if(Yii::$app->user->isGuest && $this->route != 'site/login' && $this->route != 'site/captcha')
         {
             $this ->redirect(['/site/login']);
         }
@@ -97,6 +97,7 @@ class BaseController extends Controller
     private function auth($route)
     {
         $list = [
+            'site/captcha',
             'site/login',
             'site/error',
             'site/logout',

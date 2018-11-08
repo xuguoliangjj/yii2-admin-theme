@@ -5,28 +5,23 @@
 $this->title = '规则列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php \yii\widgets\Pjax::begin()?>
-    <div class="panel panel-default own-panel">
-        <div class="panel-heading">
-            规则列表
-            <span class="pull-right own-toggle">
-                <a class="glyphicon glyphicon-chevron-up"></a>
-            </span>
-        </div>
-        <div class="panel-body">
-            <?= \xuguoliangjj\editorgridview\EditorGridView::widget([
-                'dataProvider'=>$dataProvider,
-                'filterModel'=>$searchModel,
-                'summary'=>'',
-                'buttons'=>[
-                    \yii\helpers\Html::a('新增规则',['/admin/rule/create'],['class'=>'btn btn-sm btn-primary'])
-                ],
-                'columns'=>[
-                    ['attribute'=>'name','label'=>'名称','filter'=>true],
-                    ['class' => 'yii\grid\ActionColumn','template' => '{view} {update} {delete}'],
-                ]
-            ]);
-            ?>
-        </div>
+<div class="layui-card">
+    <div class="layui-card-header">
+        <?= $this->title?>
     </div>
-<?php \yii\widgets\Pjax::end()?>
+    <div class="layui-card-body">
+        <?= \xuguoliangjj\editorgridview\EditorGridView::widget([
+            'dataProvider'=>$dataProvider,
+            'filterModel'=>$searchModel,
+            'summary'=>'',
+            'buttons'=>[
+                \yii\helpers\Html::a('新增规则',['/admin/rule/create'],['class'=>'layui-btn'])
+            ],
+            'columns'=>[
+                ['attribute'=>'name','label'=>'名称','filter'=>true],
+                ['class' => 'xuguoliangjj\editorgridview\ActionColumn','template' => '{view} {update} {delete}'],
+            ]
+        ]);
+        ?>
+    </div>
+</div>

@@ -6,16 +6,20 @@
  * Time: 18:15
  */
 
-use \yii\widgets\ActiveForm;
+use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
-<?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-<?= $form->field($model, 'username') ?>
-<?= $form->field($model, 'email') ?>
+<?php $form = ActiveForm::begin(); ?>
+
+<?= $form->field($model, 'username')->textInput() ?>
+
+<?= $form->field($model, 'email')->textInput() ?>
 <?= $form->field($model, 'password')->passwordInput() ?>
 <?= $form->field($model, 'repassword')->passwordInput() ?>
 <?= $form->field($model, 'phone')->textInput() ?>
-    <div class="form-group">
-        <?= Html::submitButton('添加', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <?= Html::submitButton('提交', ['class' => 'layui-btn', 'name' => 'signup-button']) ?>
+        </div>
     </div>
 <?php ActiveForm::end(); ?>

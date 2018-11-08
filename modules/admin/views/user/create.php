@@ -9,14 +9,11 @@ $this->title = '添加用户';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="panel panel-default own-panel">
-    <div class="panel-heading">
-        添加用户
-        <span class="pull-right own-toggle">
-            <a class="glyphicon glyphicon-chevron-up"></a>
-        </span>
+<div class="layui-card">
+    <div class="layui-card-header">
+        <?= $this->title?>
     </div>
-    <div class="panel-body">
+    <div class="layui-card-body">
         <?= $this->render('_form',[
             'model'=>$model
         ])?>

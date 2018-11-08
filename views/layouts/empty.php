@@ -21,13 +21,11 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<body class="layui-layout-body admin-body">
-<div class="layui-layout layui-layout-admin">
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin-empty">
         <!-- 内容主体区域 -->
-    <?= $content?>
-    <div class="layui-trans layui-footer admin-footer" style="left: 0px">
-        <!-- 底部固定区域 -->
-        &copy; My Company <?= date('Y') ?> - <?= Yii::powered() ?>
+    <div class="layui-body">
+        <?= $content?>
     </div>
 </div>
 <?php $this->endBody() ?>

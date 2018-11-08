@@ -13,7 +13,7 @@ body {
 }
 
 .admin-body {
-    background: #eee;
+    background: #f2f2f2;
 }
 
 .admin-footer {
@@ -54,4 +54,59 @@ a {
 
 .layui-body {
     background: #f2f2f2;
+}
+
+
+.pagination > li {
+    display: inline;
+    padding: 6px 12px;
+}
+.pagination .active {
+    background-color: #009688;
+    border-radius: 2px;
+}
+
+.pagination .active a {
+    cursor: text;
+}
+
+.pagination .active a:hover {
+    color: white;
+}
+
+.pagination .disabled {
+    color: #d2d2d2!important;
+    cursor: not-allowed!important;
+}
+.pagination > li > a {
+    color: #393d49;
+}
+
+.pagination .active a {
+    color: #ffffff;
+}
+
+.pagination > li > a:hover {
+    color: #009688;
+}
+
+.pagination .prev {
+    padding: -5px;
+}
+
+.pagination {
+    text-align: right;
+}
+
+.layui-layout-admin-empty > .layui-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 998;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
 }

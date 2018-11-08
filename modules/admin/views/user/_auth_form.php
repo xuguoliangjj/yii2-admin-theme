@@ -6,15 +6,23 @@
  * Time: 18:15
  */
 
-use \yii\widgets\ActiveForm;
+use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
-<?php $form = ActiveForm::begin(['id' => 'assignment-form']); ?>
-
-<?= $form->field($model, 'roles')->checkboxList($roles,['class'=>'own-permission-list']); ?>
-
-<div class="form-group">
-    <?= Html::submitButton('修改',
-        ['class' => 'btn btn-success btn-sm']) ?>
-</div>
+<?php $form = ActiveForm::begin(); ?>
+    <?= $form->field($model, 'roles')->checkboxList($roles,
+        [
+            'item' => function ($index, $label, $name, $checked, $value) {
+                return Html::checkbox($name, $checked, [
+                    'value' => $value,
+                    'title' => $label,
+                ]);
+            }
+        ]); ?>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+        <?= Html::submitButton('修改',
+            ['class' => 'layui-btn']) ?>
+        </div>
+    </div>
 <?php ActiveForm::end(); ?>

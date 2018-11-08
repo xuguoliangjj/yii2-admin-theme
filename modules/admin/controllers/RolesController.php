@@ -89,6 +89,7 @@ class RolesController extends BaseController
      */
     public function actionView($id,  $term = '')
     {
+        $this->layout='@app/views/layouts/empty';
         $model = new RoleAuthForm();
         $model->roles = [$id=>$id];
         $model->setScenario('auth');
@@ -161,7 +162,7 @@ class RolesController extends BaseController
             }
         }
 
-        $routes = require(Yii::getAlias('@admin/config/permission.php'));
+        $routes = require(Yii::getAlias('@app/config/permission.php'));
         return $this->render('view',[
             'id' => $id,
             'result'=>$result,

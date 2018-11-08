@@ -1,6 +1,7 @@
 <?php
 use \xuguoliangjj\editorgridview\EditorGridView;
-
+use \yii\helpers\Url;
+use \yii\helpers\Html;
 
 $this->title = '用户管理';
 $this->params['breadcrumbs'][] = $this->title;
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $model,
             'buttons'=>[
-                \yii\helpers\Html::a('添加用户',['/admin/user/create'],['class'=>'layui-btn'])
+                Html::button('添加用户',['class'=>'layui-btn','data-url'=>Url::to(['/admin/user/create'])]),
             ],
             'summary'=>'',
             'columns'=>[
@@ -26,9 +27,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     return [
                         'data-type'=>'text',
                         'data-pk'=>$model->id,
-                        'data-url'=>\yii\helpers\Url::to(['/setting/user/change-name'])
+                        'data-url'=>Url::to(['/admin/user/change-name'])
                     ];
-                }],'filter'=>true],
+                }],'filter'=>true,'filterInputOptions'=>['class'=>'layui-input']],
                 ['attribute'=>'phone','label'=>'手机号','filter'=>true],
                 ['attribute'=>'email'],
                 ['attribute'=>'created_at','label'=>'创建时间','value'=>function($model){
