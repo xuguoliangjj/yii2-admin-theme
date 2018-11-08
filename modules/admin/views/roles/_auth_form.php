@@ -11,6 +11,10 @@ use yii\helpers\ArrayHelper;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'auth-role-form']); ?>
 
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>拥有角色</legend>
+</fieldset>
+
 <div class="layui-form-item" style="width:200px;margin-bottom: 10px;">
 <div  class="layui-input-block">
     <input placeholder="搜索" type="text" class="layui-input" id="searchPage"/>
@@ -27,6 +31,10 @@ use yii\helpers\ArrayHelper;
         ]);
     }
 ]); ?>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>权限组合</legend>
+</fieldset>
 
 <?= $form->field($model, 'permissions')->checkboxList($result['Permissions'],[
     'class'=>'own-routes-list',
