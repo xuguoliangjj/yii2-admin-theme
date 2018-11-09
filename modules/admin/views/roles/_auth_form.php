@@ -105,21 +105,3 @@ use yii\helpers\ArrayHelper;
     </div>
 </div>
 <?php ActiveForm::end(); ?>
-
-<?php
-$this->registerJs("
-// 搜索角色名
-$('.searchPage').keyup(function(){
-    var val = $(this).val();
-    // 查找当前选择的筛选条件
-    var input = $(this).parent().parent().siblings('.layui-form-item').find('.own-routes-list').find('input')
-    input.each(function(){
-         var str = $(this).val();
-          if(str.indexOf(val)>=0){
-            $(this).next().show();
-        }else{
-            $(this).next().hide();
-        }
-    });
-});
-"); ?>

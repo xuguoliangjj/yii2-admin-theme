@@ -8,7 +8,6 @@
 
 
 $this->title = '修改角色';
-$this->params['breadcrumbs'] = \backend\components\Tools::buildBreadcrumbs($this,$this->title);
 ?>
 
 <div class="panel panel-default own-panel">

@@ -45,3 +45,17 @@ $(".routes-check-all").siblings('.layui-form-checkbox').click(function () {
         i.siblings('.layui-form-checkbox').removeClass('layui-form-checked');
     }
 });
+
+$('.searchPage').keyup(function(){
+    var val = $(this).val();
+    // 查找当前选择的筛选条件
+    var input = $(this).parent().parent().siblings('.layui-form-item').find('.own-routes-list').find('input')
+    input.each(function(){
+        var str = $(this).val();
+        if(str.indexOf(val)>=0){
+            $(this).next().show();
+        }else{
+            $(this).next().hide();
+        }
+    });
+});
