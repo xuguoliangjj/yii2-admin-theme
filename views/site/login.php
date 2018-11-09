@@ -32,9 +32,7 @@ use \yii\captcha\Captcha;
                 'style' => '',
                 'placeholder' => '输入验证码',
             ],
-            'template' => '
-                       {input}&nbsp;&nbsp;{image}
-                       ',
+            'template' => '{input}&nbsp;&nbsp;{image}',
             'imageOptions' => [
                 'style' => 'max-height:38px;',
                 'options' => ['class' => 'admin-captcha']
