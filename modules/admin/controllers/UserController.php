@@ -61,11 +61,10 @@ class UserController extends BaseController
 
             }catch (\Exception $e){
                 Yii::$app ->session->setFlash('fail',$e->getMessage());
-                $this -> refresh();
-                Yii::$app->end();
+                $this->closeWindows();
             }
             Yii::$app ->session->setFlash('success','授权成功');
-            $this -> redirect(['index']);
+            $this->closeWindows();
         }
         $roles = $authManager->getRoles();
         $roles = ArrayHelper::map($roles,'name','name');
@@ -143,7 +142,7 @@ class UserController extends BaseController
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 Yii::$app ->session->setFlash('success','添加成功');
-                $this->redirect(['index']);
+                $this->closeWindows();
             }
         }
         return $this->render('create',[
@@ -161,11 +160,10 @@ class UserController extends BaseController
         if($model->delete()) {
             Yii::$app->authManager->revokeAll($id);
             Yii::$app ->session->setFlash('success','用户' .$model->username .'已成功删除');
-            $this->redirect(['index']);
         }else{
             Yii::$app ->session->setFlash('fail','用户' .$model->username .'删除失败');
-            $this->redirect(['index']);
         }
+        $this->closeWindows();
     }
 
     /**
@@ -197,7 +195,7 @@ class UserController extends BaseController
             if($model->validate($model->activeAttributes(),false) && $user->save())
             {
                 Yii::$app ->session->setFlash('success','修改成功');
-                $this->redirect(['index']);
+                $this->closeWindows();
             }
         }
         return $this->render('update',[

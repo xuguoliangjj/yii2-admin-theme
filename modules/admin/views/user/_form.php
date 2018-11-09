@@ -19,7 +19,7 @@ use \yii\helpers\Html;
 <?= $form->field($model, 'phone')->textInput() ?>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <?= Html::submitButton('提交', ['class' => 'layui-btn', 'name' => 'signup-button']) ?>
+            <?= Html::submitButton('提交', ['class' => 'layui-btn', 'onsubmit' => '']) ?>
         </div>
     </div>
 <?php ActiveForm::end(); ?>

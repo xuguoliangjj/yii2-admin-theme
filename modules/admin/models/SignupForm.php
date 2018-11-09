@@ -24,13 +24,13 @@ class SignupForm extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\admin\models\User', 'message' => 'This username has already been taken.','on'=>['create']],
+            ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.','on'=>['create']],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             //['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => '\admin\models\User', 'message' => 'This email address has already been taken.','on'=>['create']],
+            ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.','on'=>['create']],
 
             [['password','repassword'], 'required','on'=>['create']],
             [['password','repassword'], 'string', 'min' => 6],

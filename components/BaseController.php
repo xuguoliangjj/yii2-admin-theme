@@ -37,12 +37,31 @@ class BaseController extends Controller
         $this->getView()->title = 'Admin System';
     }
 
+    private function flash()
+    {
+
+        if($this->route == 'site/close-win') {
+            return;
+        }
+        $levels = [0=>'warning',1=>'success',2=>'fail',6=>'info'];
+        foreach ($levels as $icon => $level) {
+            if(Yii::$app->session->hasFlash($level))
+            {
+                $msg = Yii::$app->session->getFlash($level);
+                $this->getView()->registerJs("
+                    layer.msg('$msg', {icon: $icon});
+                ");
+            }
+        }
+    }
+
     /**
      * @param \yii\base\Action $action
      * @return bool
      */
     public function beforeAction($action)
     {
+        $this->flash();
         if(Yii::$app->user->isGuest && $this->route != 'site/login' && $this->route != 'site/captcha')
         {
             $this ->redirect(['/site/login']);
@@ -226,5 +245,13 @@ class BaseController extends Controller
                 . $label;
         }
         return $label;
+    }
+
+    /**
+     * 关闭iframe
+     */
+    public function closeWindows()
+    {
+        $this->redirect(['/site/close-win']);
     }
 }

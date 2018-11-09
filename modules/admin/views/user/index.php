@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $model,
             'buttons'=>[
-                Html::button('添加用户',['class'=>'layui-btn','data-url'=>Url::to(['/admin/user/create'])]),
+                Html::button('添加用户',['class'=>'layui-btn','data-url'=>Url::to(['/admin/user/create'])])
             ],
             'summary'=>'',
             'columns'=>[

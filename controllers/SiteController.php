@@ -127,4 +127,13 @@ class SiteController extends BaseController
     {
         return $this->render('about');
     }
+
+    /**
+     * @return string
+     */
+    public function actionCloseWin()
+    {
+        $this->layout='empty';
+        return $this->render('close-win');
+    }
 }

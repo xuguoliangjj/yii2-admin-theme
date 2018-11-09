@@ -60,7 +60,7 @@ class RolesController extends BaseController
         } else {
             Yii::$app->session->setFlash('fail', "删除 $id 失败");
         }
-        $this->redirect(['index']);
+        $this->closeWindows();
     }
 
     /**
@@ -74,7 +74,7 @@ class RolesController extends BaseController
         $model =  $this->findModel($id);
         if($model->load(Yii::$app->getRequest()->post()) && $model->save()) {
             Yii::$app->session->setFlash('success',"修改 $id 成功");
-            $this->redirect(['index']);
+            $this->closeWindows();
         }
         return $this->render('update',[
             'model'=>$model,
@@ -119,7 +119,7 @@ class RolesController extends BaseController
                 }
             }
             Yii::$app->session->setFlash('success',"修改 $id 权限成功");
-            $this->redirect(['index']);
+            $this->closeWindows();
         }
         $result = [
             'Roles'       => [],
