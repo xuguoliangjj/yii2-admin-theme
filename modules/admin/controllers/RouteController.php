@@ -21,8 +21,7 @@ class RouteController extends BaseController
     {
         $model = new AuthItemSearch();
         $dataProvider = $model->search(Yii::$app->request->get());
-        return $this->render('index',
-            [
+        return $this->render('index',[
                 'model'=>$model,
                 'dataProvider'=>$dataProvider
             ]);
@@ -52,8 +51,10 @@ class RouteController extends BaseController
 //    }
 
 
-    public function actionUpdate($pk,$description)
+    public function actionUpdate()
     {
+        $pk = Yii::$app->request->post('name');
+        $description = Yii::$app->request->post('description');
         $model = Route::find($pk);
         if($model && !$model -> isNewRecord)
         {
@@ -61,9 +62,9 @@ class RouteController extends BaseController
             $newItem = $auth->createPermission('/' . trim($pk,'/'));
             $newItem -> description = $description;
             if($auth -> update($pk,$newItem)){
-                return Json::encode(array('status' => 'success','msg'=>'修改成功'));
+                Yii::$app->session->setFlash('success','修改成功');
             }else{
-                return Json::encode(array('status' => 'error','msg'=>'修改失败'));
+                Yii::$app->session->setFlash('error','修改失败');
             }
 
         }else{
@@ -74,13 +75,16 @@ class RouteController extends BaseController
             $routes       = preg_split('/\s*,\s*/', trim($pk), -1, PREG_SPLIT_NO_EMPTY);
             $descriptions = preg_split('/\s*,\s*/', trim($description), -1, PREG_SPLIT_NO_EMPTY);
             if($model->save($routes,$descriptions)){
-                return Json::encode(array('status' => 'success','msg'=>'新增路由成功'));
+                Yii::$app->session->setFlash('success','新增路由成功');
             }else{
-                return Json::encode(array('status' => 'error','msg'=>'新增路由失败'));
+                Yii::$app->session->setFlash('error','新增路由失败');
             }
         }
     }
 
+    /**
+     * @param $id
+     */
     public function actionDelete($id)
     {
         $model = new Route();

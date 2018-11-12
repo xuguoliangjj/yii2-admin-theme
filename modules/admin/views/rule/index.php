@@ -1,4 +1,7 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+use \xuguoliangjj\editorgridview\EditorGridView;
 /* @var $this yii\web\View */
 ?>
 <?php
@@ -10,12 +13,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $this->title?>
     </div>
     <div class="layui-card-body">
-        <?= \xuguoliangjj\editorgridview\EditorGridView::widget([
+        <?= EditorGridView::widget([
             'dataProvider'=>$dataProvider,
             'filterModel'=>$searchModel,
             'summary'=>'',
             'buttons'=>[
-                \yii\helpers\Html::a('新增规则',['/admin/rule/create'],['class'=>'layui-btn'])
+                Html::button('新增规则',['class'=>'layui-btn','data-url'=>Url::to(['/admin/rule/create'])])
             ],
             'columns'=>[
                 ['attribute'=>'name','label'=>'名称','filter'=>true],

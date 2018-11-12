@@ -24,9 +24,11 @@ class RuleController extends BaseController
 
     public function actionCreate()
     {
+        $this->layout='@app/views/layouts/empty';
         $model = new Rule();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index', 'id' => $model->name]);
+            Yii::$app->session->setFlash('success','添加成功');
+            $this->closeWindows();
         } else {
             return $this->render('create', ['model' => $model]);
         }
@@ -34,10 +36,11 @@ class RuleController extends BaseController
 
     public function actionUpdate($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $model = Rule::find($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success','修改成功');
-            return $this->redirect(['index']);
+            $this->closeWindows();
         } else {
             return $this->render('update', ['model' => $model]);
         }
