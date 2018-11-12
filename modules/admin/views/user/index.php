@@ -23,13 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns'=>[
                 ['attribute'=>'id','label'=>'序列'],
 
-                ['attribute'=>'username','format'=>'raw','editable'=>['editor',function($model){
-                    return [
-                        'data-type'=>'text',
-                        'data-pk'=>$model->id,
-                        'data-url'=>Url::to(['/admin/user/change-name'])
-                    ];
-                }],'filter'=>true,'filterInputOptions'=>['class'=>'layui-input']],
+                ['attribute'=>'username','format'=>'raw','filter'=>true,'filterInputOptions'=>['class'=>'layui-input']],
                 ['attribute'=>'phone','label'=>'手机号','filter'=>true],
                 ['attribute'=>'email'],
                 ['attribute'=>'created_at','label'=>'创建时间','value'=>function($model){

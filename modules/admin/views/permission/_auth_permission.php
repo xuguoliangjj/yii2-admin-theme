@@ -67,7 +67,8 @@ use \yii\helpers\ArrayHelper;
                                 return Html::checkbox($name, $checked, [
                                     'value' => $value,
                                     'title' => $label,
-                                    'lay-skin'=>'primary'
+                                    'lay-skin'=>'primary',
+                                    'disabled'=>Yii::$app->authManager->getPermission($value) ? false : 'disabled'
                                 ]);
                             }
                         ]

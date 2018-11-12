@@ -67,12 +67,6 @@ use yii\helpers\ArrayHelper;
             <?php
                 if(!$item['items']) {continue;}
                 $check = count(array_intersect(ArrayHelper::map($item['items'],'url','url'), $model->routes)) == count($item['items']);
-//                $allCheck = '
-//                    <div class="layui-form-item">
-//                        <div class="layui-input-block">
-//                            '.Html::checkbox('all',$check,['class' => 'routes-check-all','title'=>$item['label'] . '-全选','lay-skin'=>'primary']).'
-//                        </div>
-//                    </div>';
             ?>
             <fieldset class="layui-elem-field">
                 <legend><?= Html::checkbox('all',$check,['class' => 'routes-check-all','title'=>$item['label'],'lay-skin'=>'primary'])?></legend>
@@ -86,7 +80,8 @@ use yii\helpers\ArrayHelper;
                                     return Html::checkbox($name, $checked, [
                                         'value' => $value,
                                         'title' => $label,
-                                        'lay-skin'=>'primary'
+                                        'lay-skin'=>'primary',
+                                        'disabled'=>Yii::$app->authManager->getPermission($value) ? false : 'disabled'
                                     ]);
                                 }
                             ]
