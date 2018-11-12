@@ -5,7 +5,7 @@
  * Date: 2015/9/5
  * Time: 1:48
  */
-use \yii\widgets\ActiveForm;
+use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'update-role-form']); ?>
@@ -15,8 +15,9 @@ use \yii\helpers\Html;
 <?= $form->field($model, 'ruleName')->dropDownList($rules) ?>
 <?= $form->field($model, 'data')->textarea()?>
 
-<div class="form-group">
-    <?= Html::submitButton($model->isNewRecord ? '添加' : '修改',
-        ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
-</div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+        <?= Html::submitButton($model->isNewRecord ? '添加' : '修改', ['class' => 'layui-btn']) ?>
+        </div>
+    </div>
 <?php ActiveForm::end(); ?>

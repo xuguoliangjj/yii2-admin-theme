@@ -35,6 +35,7 @@ class RolesController extends BaseController
      */
     public function actionCreate()
     {
+        $this->layout='@app/views/layouts/empty';
         $rules = ArrayHelper::merge([''=>'NONE'],ArrayHelper::map(Yii::$app->getAuthManager()->getRules(),'name','name'));
         $model = new AuthItem();
         $model->type=Item::TYPE_ROLE;             //角色
@@ -70,6 +71,7 @@ class RolesController extends BaseController
      */
     public function actionUpdate($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $rules = ArrayHelper::merge([''=>'NONE'],ArrayHelper::map(Yii::$app->getAuthManager()->getRules(),'name','name'));
         $model =  $this->findModel($id);
         if($model->load(Yii::$app->getRequest()->post()) && $model->save()) {

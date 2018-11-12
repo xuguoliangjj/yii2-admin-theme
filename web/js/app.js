@@ -21,6 +21,10 @@ layui.use('laydate', function(){
 
 $('.admin-grid-buttons > button,.admin-pop-btn').click(function (e) {
     var url = $(this).data('url');
+    var action = $(this).data('action');
+    if(action === 'delete') {
+        return true;
+    }
     if(url) {
         layer.open({
             type: 2,

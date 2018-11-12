@@ -151,8 +151,8 @@ class UserController extends BaseController
     }
 
     /**
-     * 删除用户
      * @param $id
+     * @return \yii\web\Response
      */
     public function actionDelete($id)
     {
@@ -163,7 +163,7 @@ class UserController extends BaseController
         }else{
             Yii::$app ->session->setFlash('fail','用户' .$model->username .'删除失败');
         }
-        $this->closeWindows();
+        return $this->redirect(['index']);
     }
 
     /**

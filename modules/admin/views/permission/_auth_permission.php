@@ -11,37 +11,79 @@
 ]
 ); ?>
  */
-use \yii\widgets\ActiveForm;
+use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 use \yii\helpers\ArrayHelper;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'auth-role-form']); ?>
-<?= $form->field($model, 'permissions')->checkboxList($permissions,['class'=>'own-routes-list']); ?>
 
-<?= Html::activeLabel($model, 'routes', ['class' => 'control-label']);?>
-<div class="own-routes-list">
-<?php foreach($routes as $items):?>
-    <div class="page-header">
-        <h4><b><?= $items['label']?></b></h4>
-    </div>
-    <?php foreach($items['items'] as $item):?>
-        <?php
-            $check = count(array_intersect(ArrayHelper::map($item['items'],'url','url'), $model->routes)) == count($item['items']);
-            $allCheck = Html::label(Html::checkbox('all',$check,['class' => 'routes-check-all']) . "&nbsp;" . $item['label']);
-        ?>
-        <?= $form->field($model, 'routes',['parts'=>['{label}'=>$allCheck]])->checkboxList(ArrayHelper::map($item['items'],'url','label'),
-            [
-                'unselect'=>null,
+    <fieldset class="layui-elem-field">
+        <legend>角色</legend>
+        <div class="layui-field-box">
+            <div class="layui-form-item" style="margin-bottom: 10px;">
+                <label class="layui-form-label"><i class="layui-icon layui-icon-search"></i></label>
+                <div  class="layui-input-inline">
+                    <input placeholder="搜索" type="text" class="layui-input searchPage"/>
+                </div>
+            </div>
+            <?= $form->field($model, 'permissions',['parts'=>['{label}'=>'']])->checkboxList($permissions,[
                 'class'=>'own-routes-list',
-                'encode'=>false
-            ]
-        ); ?>
+                'item' => function ($index, $label, $name, $checked, $value) {
+                    return Html::checkbox($name, $checked, [
+                        'value' => $value,
+                        'title' => $label
+                    ]);
+                }
+            ]); ?>
+        </div>
+    </fieldset>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>菜单权限</legend>
+    </fieldset>
+    <div class="own-routes-list">
+<?php foreach($routes as $items):?>
+    <?php foreach($items['items'] as $sub):?>
+        <?php foreach($sub['items'] as $item):?>
+            <?php
+            if(!$item['items']) {continue;}
+            $check = count(array_intersect(ArrayHelper::map($item['items'],'url','url'), $model->routes)) == count($item['items']);
+//                $allCheck = '
+//                    <div class="layui-form-item">
+//                        <div class="layui-input-block">
+//                            '.Html::checkbox('all',$check,['class' => 'routes-check-all','title'=>$item['label'] . '-全选','lay-skin'=>'primary']).'
+//                        </div>
+//                    </div>';
+            ?>
+            <fieldset class="layui-elem-field">
+                <legend><?= Html::checkbox('all',$check,['class' => 'routes-check-all','title'=>$item['label'],'lay-skin'=>'primary'])?></legend>
+                <div class="layui-field-box">
+                    <?= $form->field($model, 'routes',['parts'=>['{label}'=>'']])->checkboxList(ArrayHelper::map($item['items'],'url','label'),
+                        [
+                            'unselect'=>null,
+                            'class'=>'own-routes-list',
+                            'encode'=>false,
+                            'item' => function ($index, $label, $name, $checked, $value) {
+                                return Html::checkbox($name, $checked, [
+                                    'value' => $value,
+                                    'title' => $label,
+                                    'lay-skin'=>'primary'
+                                ]);
+                            }
+                        ]
+                    ); ?>
+                </div>
+            </fieldset>
+        <?php endforeach;?>
     <?php endforeach;?>
 <?php endforeach;?>
-</div>
-    <div class="form-group">
-        <?= Html::submitButton('修改', ['class' => 'btn btn-success btn-sm']) ?>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <?= Html::submitButton('修改', ['class' => 'layui-btn']) ?>
+        </div>
     </div>
+
 <?php ActiveForm::end(); ?>
 
 <script>

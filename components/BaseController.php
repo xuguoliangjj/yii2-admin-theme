@@ -39,7 +39,7 @@ class BaseController extends Controller
 
     private function flash()
     {
-
+//var_dump(Yii::$app->session->hasFlash('fail'));exit;
         if($this->route == 'site/close-win') {
             return;
         }
@@ -49,7 +49,7 @@ class BaseController extends Controller
             {
                 $msg = Yii::$app->session->getFlash($level);
                 $this->getView()->registerJs("
-                    layer.msg('$msg', {icon: $icon});
+                    layer.msg(\"$msg\", {icon: $icon});
                 ");
             }
         }

@@ -6,7 +6,7 @@
  * Time: 18:15
  */
 
-use \yii\widgets\ActiveForm;
+use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'create-permission-form']); ?>
@@ -16,8 +16,10 @@ use \yii\helpers\Html;
 <?= $form->field($model, 'ruleName')->dropDownList($rules) ?>
 <?= $form->field($model, 'data')->textarea()?>
 
-<div class="form-group">
+    <div class="layui-form-item">
+    <div class="layui-input-block">
     <?= Html::submitButton($model->isNewRecord ? '添加' : '修改',
-        ['class' => $model->isNewRecord ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm']) ?>
-</div>
+        ['class' => 'layui-btn']) ?>
+    </div>
+    </div>
 <?php ActiveForm::end(); ?>

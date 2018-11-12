@@ -1,4 +1,7 @@
 <?php
+use \yii\helpers\Html;
+use \yii\helpers\Url;
+use \xuguoliangjj\editorgridview\EditorGridView;
 $this->title = '角色管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -8,12 +11,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $this->title?>
     </div>
     <div class="layui-card-body">
-        <?= \xuguoliangjj\editorgridview\EditorGridView::widget([
+        <?= EditorGridView::widget([
             'dataProvider'=>$dataProvider,
             'filterModel'=>$model,
             'summary'=>'',
             'buttons'=>[
-                \yii\helpers\Html::a('添加角色',['/admin/roles/create'],['class'=>'layui-btn'])
+                Html::button('添加角色',['class'=>'layui-btn','data-url'=>Url::to(['/admin/roles/create'])])
             ],
             'columns'=>[
                 ['attribute'=>'name','label'=>'名称','filter'=>true],

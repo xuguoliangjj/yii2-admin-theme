@@ -10,14 +10,11 @@ $this->title = '添加角色';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="panel panel-default own-panel">
-    <div class="panel-heading">
+<div class="layui-card">
+    <div class="layui-card-header">
         <?= $this->title?>
-        <span class="pull-right own-toggle">
-            <a class="glyphicon glyphicon-chevron-up"></a>
-        </span>
     </div>
-    <div class="panel-body">
+    <div class="layui-card-body">
         <?= $this->render('_form',[
             'model'=>$model,
             'rules'=>$rules

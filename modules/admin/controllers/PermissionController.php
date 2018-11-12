@@ -33,6 +33,7 @@ class PermissionController extends BaseController
 
     public function actionCreate()
     {
+        $this->layout='@app/views/layouts/empty';
         $rules = ArrayHelper::merge([''=>'NONE'],ArrayHelper::map(Yii::$app->getAuthManager()->getRules(),'name','name'));
         $model = new AuthItem();
         $model->type=Item::TYPE_PERMISSION;
@@ -45,6 +46,7 @@ class PermissionController extends BaseController
 
     public function actionView($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $model = new AuthPermissionForm();
         $model -> setScenario('auth');
         $result = [
@@ -88,11 +90,10 @@ class PermissionController extends BaseController
                 }
             }catch (\Exception $e){
                 Yii::$app ->session->setFlash('fail',$e->getMessage());
-                $this -> refresh();
-                Yii::$app->end();
+                $this->closeWindows();
             }
             Yii::$app ->session->setFlash('success','授权成功');
-            $this -> redirect(['index']);
+            $this -> closeWindows();
         }
 
         foreach ($authManager -> getPermissions() as $name => $role) {
@@ -107,7 +108,7 @@ class PermissionController extends BaseController
                 }
             }
         }
-
+        $model->routes = [];
         foreach($authManager -> getChildren($id) as $name => $item){
             if($name[0] === '/'){
                 $model->routes[$name] = $name;
@@ -115,7 +116,7 @@ class PermissionController extends BaseController
                 $model->permissions   = $name;
             }
         }
-        $routes = require(Yii::getAlias('@admin/config/permission.php'));
+        $routes = require(Yii::getAlias('@app/config/permission.php'));
 
         return $this->render('view',[
             'model'=>$model,
@@ -138,12 +139,13 @@ class PermissionController extends BaseController
 
     public function actionUpdate($id)
     {
+        $this->layout='@app/views/layouts/empty';
         $rules = ArrayHelper::merge([''=>'NONE'],ArrayHelper::map(Yii::$app->getAuthManager()->getRules(),'name','name'));
         $item = Yii::$app->authManager->getPermission($id);
         $model = new AuthItem($item);
         if($model -> load(Yii::$app->request->post()) && $model -> save()){
             Yii::$app ->session->setFlash('success','修改权限成功');
-            $this -> redirect(['index']);
+            $this -> closeWindows();
         }
         return $this->render('update',[
             'model'=>$model,
