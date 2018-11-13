@@ -21,7 +21,6 @@ class BaseController extends Controller
     public $layout='@app/views/layouts/main';
     public $topMenu = [];         //顶部菜单
     public $leftMenu = [];        //左侧二级菜单
-    public $tools;           //运营工具配置
     public $singleDate = false;
     /*
      * 默认的菜单图标
@@ -31,15 +30,26 @@ class BaseController extends Controller
     //默认显示菜单图标
     public $activeIcon  = true;
 
+    //权限控制白名单路由
+    public $routeWhiteList = [
+        'site/captcha',
+        'site/login',
+        'site/error',
+        'site/logout'
+    ];
+
+
     public function init()
     {
         parent::init();
-        $this->getView()->title = 'Admin System';
+        $this->getView()->title = Yii::$app->id;
     }
 
+    /**
+     * flash message
+     */
     private function flash()
     {
-//var_dump(Yii::$app->session->hasFlash('fail'));exit;
         if($this->route == 'site/close-win') {
             return;
         }
@@ -62,28 +72,26 @@ class BaseController extends Controller
     public function beforeAction($action)
     {
         $this->flash();
-        if(Yii::$app->user->isGuest && $this->route != 'site/login' && $this->route != 'site/captcha')
-        {
+        if(Yii::$app->user->isGuest &&  !in_array($this->route,$this->routeWhiteList)) {
             $this ->redirect(['/site/login']);
-        }
-        $this -> authRoute();
-        $menuFilePath = Yii::getAlias('@app/config/menu.php');
-        $menuConfig = require_once $menuFilePath;
-        $menus = $menuConfig['menu'];
-        $activeTag = '';
-        $menus = $this -> normalizeMenu($menus,$activeTag);
-        if(isset($menus[$activeTag]['items']))
-        {
-            $this -> leftMenu = $menus[$activeTag]['items'];
         } else {
-            $this -> leftMenu  = [];
-        }
-        foreach($menus as $key => $items)
-        {
-            unset($menus[$key]['items']);
-        }
+            $this->authRoute();
+            $menuFilePath = Yii::getAlias('@app/config/menu.php');
+            $menuConfig = require_once $menuFilePath;
+            $menus = $menuConfig['menu'];
+            $activeTag = '';
+            $menus = $this->normalizeMenu($menus, $activeTag);
+            if (isset($menus[$activeTag]['items'])) {
+                $this->leftMenu = $menus[$activeTag]['items'];
+            } else {
+                $this->leftMenu = [];
+            }
+            foreach ($menus as $key => $items) {
+                unset($menus[$key]['items']);
+            }
 
-        $this -> topMenu = $menus;
+            $this->topMenu = $menus;
+        }
         return parent::beforeAction($action);
     }
 
@@ -101,10 +109,9 @@ class BaseController extends Controller
             $route = trim($this->route,'/');
         }
         $route = trim($route,'/');
-        if(!$this->auth($route))
-        {
+        if(!$this->auth($route)) {
             throw new ForbiddenHttpException('无权限访问！');
-        }else{
+        } else {
             return true;
         }
     }
@@ -115,15 +122,7 @@ class BaseController extends Controller
      */
     private function auth($route)
     {
-        $list = [
-            'site/captcha',
-            'site/login',
-            'site/error',
-            'site/logout',
-            'default'
-        ];
-        if(in_array($route,$list))
-        {
+        if(in_array($route,$this->routeWhiteList)) {
             return true;
         }
         $route      = '/'.trim($route,'/');

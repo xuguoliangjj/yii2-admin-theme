@@ -4,6 +4,9 @@
 /* @var $content string */
 use yii\helpers\Html;
 use \yii\helpers\Url;
+use \yii\widgets\Breadcrumbs;
+
+
 use app\assets\AppAsset;
 AppAsset::register($this);
 ?>
@@ -76,25 +79,30 @@ AppAsset::register($this);
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-            <div style="padding-bottom: 15px;">
-            <?= \yii\widgets\Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                'options' => ['class' => 'layui-breadcrumb'],
-                'tag' => 'span',
-                'homeLink' => [
-                    'label' => '首页',                  // required
-                    'url' => '/',                      // optional, will be processed by Url::to()
-                    'template' => "{link}\n", // optional, if not set $this->itemTemplate will be used
-                ],
-                'itemTemplate' => "{link}\n",
-                'activeItemTemplate' => "<a><cite>{link}</cite></a>\n"
-            ]) ?>
+        <div class="layui-row">
+            <div class="layui-col-xs12">
+                <div class="layui-card admin-breadcrumb">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'options' => ['class' => 'layui-breadcrumb'],
+                        'tag' => 'span',
+                        'homeLink' => [
+                            'label' => '首页',                  // required
+                            'url' => '/',                      // optional, will be processed by Url::to()
+                            'template' => "{link}\n", // optional, if not set $this->itemTemplate will be used
+                        ],
+                        'itemTemplate' => "{link}\n",
+                        'activeItemTemplate' => "<a><cite>{link}</cite></a>\n"
+                    ]) ?>
+                </div>
             </div>
-            <?= $content?>
         </div>
-    </div>
-
+        <div class="layui-row admin-content">
+            <div class="layui-col-xs12">
+                <?= $content?>
+            </div>
+        </div>
+     </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
         &copy; My Company <?= date('Y') ?> - <?= Yii::powered() ?>

@@ -110,3 +110,39 @@ a {
     overflow-y: auto;
     box-sizing: border-box;
 }
+
+.admin-pull-right {
+    float: right;
+}
+
+.admin-card-list {
+    padding: 7.5px;
+    margin: 7.5px;
+}
+
+.admin-big-font {
+    font-size: 36px;
+    color: #666;
+    line-height: 36px;
+    padding: 5px 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+}
+
+.admin-card-tag {
+    top: 30%;
+}
+
+.admin-breadcrumb {
+    padding: 15px;
+}
+
+.admin-content {
+    margin: 7.5px;
+}
+
+.admin-layui-row {
+    padding-bottom: 7.5px;
+}

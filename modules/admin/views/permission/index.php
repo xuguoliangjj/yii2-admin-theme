@@ -2,7 +2,7 @@
 $this->title = '用户管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="layui-card">
+<div class="layui-card admin-layui-row">
     <div class="layui-card-header">
         <?= $this->title?>
     </div>
