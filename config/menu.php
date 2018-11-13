@@ -11,10 +11,7 @@ return [
         'data'=> ['label'=>'主页','items'=>[
                 ['icon'=>'glyphicon glyphicon-cog','label' => '主页',
                     'items' => [
-                        ['label' => '主页概览', 'url' => ['/site']],
-                        ['label' => '关于我们', 'url' => ['/site/about']],
-                        ['label' => '联系我们', 'url' => ['/site/contact']],
-                        ['label' => '参数配置', 'url' => ['/admin/app-partner-para']]
+                        ['label' => '主页概览', 'url' => ['/site']]
                     ]
                 ]
             ]
