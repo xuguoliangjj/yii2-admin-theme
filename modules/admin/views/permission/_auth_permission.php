@@ -68,7 +68,7 @@ use \yii\helpers\ArrayHelper;
                                     'value' => $value,
                                     'title' => $label,
                                     'lay-skin'=>'primary',
-                                    'disabled'=>Yii::$app->authManager->getPermission($value) ? false : 'disabled'
+                                    'disabled'=>Yii::$app->authManager->getPermission($value) ? false : true
                                 ]);
                             }
                         ]

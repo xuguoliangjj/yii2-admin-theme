@@ -42,12 +42,16 @@ $('.admin-grid-buttons > button,.admin-pop-btn').click(function (e) {
 $(".routes-check-all").siblings('.layui-form-checkbox').click(function () {
     var c = $(this).siblings('.routes-check-all').prop("checked");
     var i = $(this).parent().siblings('.layui-field-box').find('input:checkbox');
-    i.prop("checked", c);
-    if(c) {
-        i.siblings('.layui-form-checkbox').addClass('layui-form-checked');
-    }else{
-        i.siblings('.layui-form-checkbox').removeClass('layui-form-checked');
-    }
+    i.each(function () {
+        if($(this).attr('disabled') !== 'disabled') {
+            $(this).prop("checked", c);
+            if ($(this).prop("checked")) {
+                $(this).next().addClass('layui-form-checked');
+            } else {
+                $(this).next().removeClass('layui-form-checked');
+            }
+        }
+    });
 });
 
 $('.searchPage').keyup(function(){
