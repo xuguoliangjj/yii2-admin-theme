@@ -1,0 +1,23 @@
+{
+  "name": "xuguoliangjj/yii2-editorgridview",
+  "description": "test",
+  "keywords": ["datatable"],
+  "homepage": "https://github.com/xuguoliangjj",
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "xuguoliang",
+      "email": "1044748759@qq.com",
+      "homepage": "http://www.baidu.com"
+    }
+  ],
+  "require": {
+    "xuguoliangjj/yii2-editorgridview": "~0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "xuguoliangjj\\editorgridview\\": ""
+    }
+  }
+}
