@@ -109,6 +109,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php endfor;?>
                     </tbody>
                 </table>
+                <script type="text/html" id="toolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+                        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+                        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+                    </div>
+                </script>
+
+                <script type="text/html" id="barDemo">
+                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                </script>
+
+
+                <script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
             </div>
         </div>
     </div>

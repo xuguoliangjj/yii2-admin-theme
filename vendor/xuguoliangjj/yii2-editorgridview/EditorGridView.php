@@ -169,6 +169,7 @@ EOD
             'id' => $this->options['id'],
             'autoSort'=>true,
             'height'=> 500,
+            'toolbar' => true
 
         ]);
         $table = Html::tag('table', implode("\n", $content), $this->tableOptions);

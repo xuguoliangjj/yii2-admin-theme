@@ -63,4 +63,29 @@ class ActiveField extends \yii\widgets\ActiveField
         return parent::checkboxList($items,$options);
     }
 
+    /**
+     * Renders a text area.
+     * The model attribute value will be used as the content in the textarea.
+     * @param array $options the tag options in terms of name-value pairs. These will be rendered as
+     * the attributes of the resulting tag. The values will be HTML-encoded using [[Html::encode()]].
+     *
+     * If you set a custom `id` for the textarea element, you may need to adjust the [[$selectors]] accordingly.
+     *
+     * @return $this the field object itself.
+     */
+    public function textarea($options = ['class'=>'layui-textarea'])
+    {
+        $options = array_merge($this->inputOptions, $options);
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeTextarea($this->model, $this->attribute, $options);
+
+        return $this;
+    }
+
 }
