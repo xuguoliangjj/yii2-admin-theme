@@ -17,9 +17,9 @@ use \yii\helpers\Html;
 <?= $form->field($model, 'data')->textarea()?>
 
     <div class="layui-form-item">
-    <div class="layui-input-block">
-    <?= Html::submitButton($model->isNewRecord ? '添加' : '修改',
-        ['class' => 'layui-btn']) ?>
-    </div>
+        <div class="layui-input-block">
+        <?= Html::submitButton($model->isNewRecord ? '添加' : '修改',
+            ['class' => 'layui-btn']) ?>
+        </div>
     </div>
 <?php ActiveForm::end(); ?>

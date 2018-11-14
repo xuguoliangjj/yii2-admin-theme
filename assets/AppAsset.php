@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         'js/app.js'
     ];
     public $depends = [
-        'app\assets\LayuiAsset'
+        'app\assets\LayuiAsset',
+        'app\assets\EChartsAsset'
     ];
 }

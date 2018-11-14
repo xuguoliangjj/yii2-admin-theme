@@ -11,10 +11,12 @@ class FormAsset extends AssetBundle
     public $basePath = '@webroot/assets';
 
     public $css = [
-        'form.css'
+        'layui-formselects/dist/formSelects-v4.css',
+        'form.css',
     ];
     public $js = [
-        'form.js'
+        'layui-formselects/dist/formSelects-v4.min.js',
+        'form.js',
     ];
     public $depends = [
         'app\assets\LayuiAsset'

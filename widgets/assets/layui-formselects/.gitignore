@@ -1,0 +1,12 @@
+script
+.project
+node_modules
+.babelrc
+package.json
+package-lock.json
+example/*test.html
+_docs
+.idea
+test/
+*.iml
+UI/
