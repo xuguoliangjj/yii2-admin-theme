@@ -6,8 +6,6 @@
     <br>
 </p>
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/xuguoliangjj/yii2-admin-theme.svg)](https://packagist.org/packages/xuguoliangjj/yii2-admin-theme)
-[![Total Downloads](https://img.shields.io/packagist/dt/xuguoliangjj/yii2-admin-theme.svg)](https://packagist.org/packages/xuguoliangjj/yii2-admin-theme)
-[![Build Status](https://travis-ci.org/xuguoliangjj/yii2-admin-theme.svg?branch=master)](https://travis-ci.org/xuguoliangjj/yii2-admin-theme)
+[![Build Status](https://img.shields.io/badge/yii2--admin--theme-beta--0.0.1-brightgreen.svg)]()
 
 后台示例：http://admin.loadata.com
