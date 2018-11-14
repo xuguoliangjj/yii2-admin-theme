@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 
 
 <fieldset class="layui-elem-field">
-    <legend>权限组合</legend>
+    <legend>角色</legend>
     <div class="layui-field-box">
         <div class="layui-form-item" style="margin-bottom: 10px;">
             <label class="layui-form-label"><i class="layui-icon layui-icon-search"></i></label>

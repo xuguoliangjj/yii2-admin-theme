@@ -120,16 +120,6 @@ return [
                         ]
                     ],
                     [
-                        'label' =>  '权限组管理',
-                        'items' =>  [
-                            ['url'=>'/setting/permission','label'=>'首页'],
-                            ['url'=>'/setting/permission/create','label'=>'新增权限组'],
-                            ['url'=>'/setting/permission/view', 'label'=>'修改权限组权限'],
-                            ['url'=>'/setting/permission/delete','label'=>'删除权限组'],
-                            ['url'=>'/setting/permission/update','label'=>'修改权限组名称'],
-                        ]
-                    ],
-                    [
                         'label' =>  '路由管理',
                         'items' =>  [
                             ['url'=>'/setting/route','label'=>'首页'],
