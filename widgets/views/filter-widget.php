@@ -82,7 +82,14 @@
             </select>
         </div>
     </div>
-
+    <div class="layui-form-item">
+        <label class="layui-form-label">马甲包</label>
+        <div class="layui-input-block admin-filter-input">
+            <select name="city" xm-select="select15">
+                <option value="">请选择, 此处是联动多选</option>
+            </select>
+        </div>
+    </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>

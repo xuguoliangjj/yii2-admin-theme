@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'summary'=>'',
             'columns'=>[
                 ['attribute'=>'name','label'=>'名称','filter'=>true],
-                ['attribute'=>'description','label'=>'简述','format'=>'raw','editable'=>Url::to(['/admin/route/update'])],
+                ['attribute'=>'description','label'=>'简述','format'=>'raw','filter'=>true,'editable'=>Url::to(['/admin/route/update'])],
                 ['class' => 'xuguoliangjj\editorgridview\ActionColumn','template' => '{delete}'],
             ]
         ]);

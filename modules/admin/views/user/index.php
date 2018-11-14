@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 ['attribute'=>'username','format'=>'raw','filter'=>true,'filterInputOptions'=>['class'=>'layui-input']],
                 ['attribute'=>'phone','label'=>'手机号','filter'=>true],
-                ['attribute'=>'email'],
+                ['attribute'=>'email','filter'=>true],
                 ['attribute'=>'created_at','label'=>'创建时间','value'=>function($model){
                     return Yii::$app->formatter->asDate($model->created_at,'php:Y-m-d H:i:s');
                 }],
