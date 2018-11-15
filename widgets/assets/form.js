@@ -20,3 +20,8 @@ layui.formSelects.on('partner-filter', function(id, vals, val, isAdd, isDisabled
 layui.formSelects.on('platform-filter', function(id, vals, val, isAdd, isDisabled){
     console.log(vals,isAdd,isDisabled);
 }, true);
+
+
+$("#filter-search").click(function () {
+    console.log($(this).parents('form').serialize());
+});

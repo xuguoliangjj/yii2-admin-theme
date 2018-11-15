@@ -14,12 +14,24 @@ use \yii\helpers\Html;
         'labelOptions' => ['class'=>'layui-form-label']
     ]
 ]); ?>
-
-<?= $form->field($model, 'date',['parts'=>['{label}'=>'&nbsp;'],'options'=>['class'=>'layui-inline']])->textInput([
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <div class="layui-btn-group">
+                <button class="layui-btn layui-btn-primary layui-btn-sm">今日</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">昨天</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">前天</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">近7天</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">近15天</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">近30天</button>
+            </div>
+        </div>
+    </div>
+<div class="layui-form-item">
+<?= $form->field($model, 'date',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->textInput([
         'class'=>'layui-input date-range-input'
 ]) ?>
 
-<?= $form->field($model, 'join',['parts'=>['{label}'=>'&nbsp;'],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+<?= $form->field($model, 'join',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
     ''=>'请选择合作方',
     1=>'11玩',
     2=>'麟游',
@@ -28,27 +40,27 @@ use \yii\helpers\Html;
     5=>'应用宝',
 ],['xm-select'=>'join-filter']) ?>
 
-<?= $form->field($model, 'system',['parts'=>['{label}'=>'&nbsp;'],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+<?= $form->field($model, 'system',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
     ''=>'请选择系统',
     1=>'IOS',
     2=>'Android'
 ],['xm-select'=>'system-filter']) ?>
-<?= $form->field($model, 'partner',['parts'=>['{label}'=>'&nbsp;'],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+<?= $form->field($model, 'partner',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
     ''=>'请选择渠道',
     1=>'羽厚亦-正版',
     2=>'应用宝'
 ],['xm-select'=>'partner-filter'])  ?>
-<?= $form->field($model, 'platform',['parts'=>['{label}'=>'&nbsp;'],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+<?= $form->field($model, 'platform',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
     ''=>'请选择马甲包',
     1=>'马甲包1',
     2=>'马甲包2'
 ],['xm-select'=>'platform-filter'])  ?>
 
-
-<div class="layui-inline">
-    <div class="layui-input-inline">
-        <?= Html::submitButton('查询',
-            ['class' => 'layui-btn']) ?>
+    <div class="layui-inline">
+        <div class="layui-input-inline">
+            <?= Html::button('搜索',
+                ['class' => 'layui-btn','id'=>'filter-search']) ?>
+        </div>
     </div>
 </div>
 <?php ActiveForm::end(); ?>
