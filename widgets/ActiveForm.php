@@ -67,11 +67,11 @@ class  ActiveForm extends \yii\widgets\ActiveForm
         if (!isset($config['class'])) {
             $config['class'] = $this->fieldClass;
         }
-        return Yii::createObject(ArrayHelper::merge($config, $options, [
+        return Yii::createObject(ArrayHelper::merge($config, [
             'model' => $model,
             'attribute' => $attribute,
             'form' => $this,
             'options'=>['class'=>'layui-form-item']
-        ]));
+        ],$options));
     }
 }

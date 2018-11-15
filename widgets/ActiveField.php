@@ -88,4 +88,49 @@ class ActiveField extends \yii\widgets\ActiveField
         return $this;
     }
 
+    /**
+     * @param array $items
+     * @param array $options
+     * @return $this
+     */
+    public function dropDownList($items, $options = [])
+    {
+        $options = array_merge($this->inputOptions, $options);
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeDropDownList($this->model, $this->attribute, $items, $options);
+
+        return $this;
+    }
+
+
+    /**
+     * @param $items
+     * @param array $options
+     * @return $this
+     */
+    public function multipleDropDownList($items, $options = [])
+    {
+        $options = array_merge($this->inputOptions, $options, [
+            "xm-select-search"=>true,
+            "xm-select-search-type" => 'dl',
+            'xm-select-height' => '36px'
+        ]);
+
+        if ($this->form->validationStateOn === ActiveForm::VALIDATION_STATE_ON_INPUT) {
+            $this->addErrorClassIfNeeded($options);
+        }
+
+        $this->addAriaAttributes($options);
+        $this->adjustLabelFor($options);
+        $this->parts['{input}'] = Html::activeDropDownList($this->model, $this->attribute, $items, $options);
+
+        return $this;
+    }
+
 }

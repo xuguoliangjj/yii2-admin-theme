@@ -8,7 +8,8 @@
 namespace app\widgets;
 
 use app\assets\FormAsset;
-
+use app\widgets\models\FilterForm;
+use Yii;
 class FilterWidget extends \yii\base\Widget
 {
     public function init()
@@ -19,6 +20,16 @@ class FilterWidget extends \yii\base\Widget
 
     public function run()
     {
-        return $this->render('filter-widget');
+        $model = new FilterForm();
+        $model->date = date('Y-m-d',strtotime('-7 days')) . ' - ' . date('Y-m-d');
+        if($model->load(Yii::$app->request->post())) {
+            $model->join = explode(',',$model->join);
+            $model->system = explode(',',$model->system);
+            $model->partner = explode(',',$model->partner);
+            $model->platform = explode(',',$model->platform);
+        }
+        return $this->render('filter-widget',[
+            'model' => $model
+        ]);
     }
 }
