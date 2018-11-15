@@ -23,10 +23,10 @@ class FilterWidget extends \yii\base\Widget
         $model = new FilterForm();
         $model->date = date('Y-m-d',strtotime('-7 days')) . ' - ' . date('Y-m-d');
         if($model->load(Yii::$app->request->post())) {
-            $model->join = explode(',',$model->join);
-            $model->system = explode(',',$model->system);
-            $model->partner = explode(',',$model->partner);
-            $model->platform = explode(',',$model->platform);
+            $model->join =  $model->join ? explode(',',$model->join) : null;
+            $model->system = $model->system ? explode(',',$model->system) : null;
+            $model->partner = $model->partner ? explode(',',$model->partner) : null;
+            $model->platform = $model->platform ? explode(',',$model->platform) : null;
         }
         return $this->render('filter-widget',[
             'model' => $model
