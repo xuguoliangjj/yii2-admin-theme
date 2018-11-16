@@ -9,52 +9,43 @@
 use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
+<div class="layui-form-item">
+    <div class="layui-inline">
+        <div class="layui-btn-group" id="own-filter-date-quick">
+            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="0">今日</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-1">昨天</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-2">前天</button>
+            <button class="layui-btn layui-btn-sm" data-date="-7">近7天</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-15">近15天</button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-30">近30天</button>
+        </div>
+    </div>
+</div>
+
 <?php $form = ActiveForm::begin([
     'fieldConfig' => [
         'labelOptions' => ['class'=>'layui-form-label']
-    ]
+    ],
+    'id'=>'filter-form'
 ]); ?>
-    <div class="layui-form-item">
-        <div class="layui-inline">
-            <div class="layui-btn-group">
-                <button class="layui-btn layui-btn-primary layui-btn-sm">今日</button>
-                <button class="layui-btn layui-btn-primary layui-btn-sm">昨天</button>
-                <button class="layui-btn layui-btn-primary layui-btn-sm">前天</button>
-                <button class="layui-btn layui-btn-primary layui-btn-sm">近7天</button>
-                <button class="layui-btn layui-btn-primary layui-btn-sm">近15天</button>
-                <button class="layui-btn layui-btn-primary layui-btn-sm">近30天</button>
-            </div>
-        </div>
-    </div>
 <div class="layui-form-item">
-<?= $form->field($model, 'date',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->textInput([
-        'class'=>'layui-input date-range-input'
-]) ?>
+    <?= $form->field($model, 'date',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->textInput([
+            'class'=>'layui-input date-range-input'
+    ]) ?>
 
-<?= $form->field($model, 'join',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
-    ''=>'请选择合作方',
-    1=>'11玩',
-    2=>'麟游',
-    3=>'乐玩',
-    4=>'摇点',
-    5=>'应用宝',
-],['xm-select'=>'join-filter']) ?>
+    <?= $form->field($model, 'join',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+        ''=>'请选择合作方'
+    ],['xm-select'=>'join-filter']) ?>
 
-<?= $form->field($model, 'system',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
-    ''=>'请选择系统',
-    1=>'IOS',
-    2=>'Android'
-],['xm-select'=>'system-filter']) ?>
-<?= $form->field($model, 'partner',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
-    ''=>'请选择渠道',
-    1=>'羽厚亦-正版',
-    2=>'应用宝'
-],['xm-select'=>'partner-filter'])  ?>
-<?= $form->field($model, 'platform',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
-    ''=>'请选择马甲包',
-    1=>'马甲包1',
-    2=>'马甲包2'
-],['xm-select'=>'platform-filter'])  ?>
+    <?= $form->field($model, 'system',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+        ''=>'请选择系统'
+    ],['xm-select'=>'system-filter']) ?>
+    <?= $form->field($model, 'partner',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+        ''=>'请选择渠道'
+    ],['xm-select'=>'partner-filter'])  ?>
+    <?= $form->field($model, 'platform',['parts'=>['{label}'=>false],'options'=>['class'=>'layui-inline']])->multipleDropDownList([
+        ''=>'请选择马甲包'
+    ],['xm-select'=>'platform-filter'])  ?>
 
     <div class="layui-inline">
         <div class="layui-input-inline">
