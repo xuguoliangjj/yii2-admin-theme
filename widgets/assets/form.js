@@ -1,9 +1,5 @@
 var formSelects = layui.formSelects;
 
-formSelects.btns('join-filter', ['select', 'remove'], {show: 'name'});
-formSelects.btns('system-filter', ['select', 'remove'], {show: 'name'});
-formSelects.btns('partner-filter', ['select', 'remove'], {show: 'name'});
-formSelects.btns('platform-filter', ['select', 'remove'], {show: 'name'});
 function filterOptions(form) {
     $.ajax({
         type:"POST",
@@ -45,9 +41,8 @@ function filterOptions(form) {
                 }else{
                     pushArr = [];
                 }
-                layui.formSelects.data(key, 'local', {
-                    arr: pushArr
-                });
+                layui.formSelects.data(key, 'local', {arr: pushArr});
+                formSelects.btns(key, ['select', 'remove'], {show: 'name'});
             }
         }
     });
