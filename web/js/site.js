@@ -6,12 +6,14 @@ function refreshSite() {
         url:"/site/main",
         beforeSend:function(){
             $(".admin-card-num").empty().html($.loadingBig);
+            $(".admin-card-total-num").empty().html($.loadingMini);
             var main = $("#admin-site-main");
             main.prev().show();
             main.next().remove();
         },
         complete:function(){
             $(".admin-card-num").children('i').remove();
+            $(".admin-card-total-num").children('i').remove();
             $("#admin-site-main").prev().hide();
         },
         success:function(json){
@@ -19,6 +21,11 @@ function refreshSite() {
             $(".admin-card-payp").html(json[1].dau_payp);
             $(".admin-card-new_p").html(json[1].new_p);
             $(".admin-card-dau").html(json[1].dau);
+
+            $(".admin-card-total-income").html(json[0].dau_income);
+            $(".admin-card-total-payp").html(json[0].dau_payp);
+            $(".admin-card-total-new_p").html(json[0].new_p);
+            $(".admin-card-total-dau").html(json[0].dau);
             refreshTable(json);
         }
     });

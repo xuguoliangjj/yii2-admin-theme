@@ -30,10 +30,10 @@ $this->registerJsFile('@web/js/site.js',['depends'=>['app\assets\FormAsset']])
                     <i style="font-size: 32px;" class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
                 </p>
                 <p>
-                    昨日同比
+                    累计收入
                     <span class="admin-pull-right">
-                        <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
-                        <i class="layui-icon layui-icon-flag"></i>
+                        <span class="admin-card-total-num admin-card-total-income"></span>
+                        <i class="layui-icon layui-icon-rmb"></i>
                     </span>
                 </p>
             </div>
@@ -48,10 +48,10 @@ $this->registerJsFile('@web/js/site.js',['depends'=>['app\assets\FormAsset']])
                 <p class="admin-big-font admin-card-num admin-card-payp">
                     <i style="font-size: 32px;" class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
                 </p>
-                <p>昨日同比
+                <p>累计人数
                     <span class="admin-pull-right">
-                        <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
-                        <i class="layui-icon layui-icon-flag"></i>
+                        <span class="admin-card-total-num admin-card-total-payp"></span>
+                        <i class="layui-icon layui-icon-user"></i>
                     </span>
                 </p>
             </div>
@@ -66,10 +66,10 @@ $this->registerJsFile('@web/js/site.js',['depends'=>['app\assets\FormAsset']])
                 <p class="admin-big-font admin-card-num admin-card-new_p">
                     <i style="font-size: 32px;" class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
                 </p>
-                <p>昨日同比
+                <p>累计新增
                     <span class="admin-pull-right">
-                        <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
-                        <i class="layui-icon layui-icon-flag"></i>
+                        <span class="admin-card-total-num admin-card-total-new_p"></span>
+                        <i class="layui-icon layui-icon-user"></i>
                     </span>
                 </p>
             </div>
@@ -84,10 +84,10 @@ $this->registerJsFile('@web/js/site.js',['depends'=>['app\assets\FormAsset']])
                 <p class="admin-big-font admin-card-num admin-card-dau">
                     <i style="font-size: 32px;" class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
                 </p>
-                <p>昨日同比
+                <p>累计活跃
                     <span class="admin-pull-right">
-                        <i class="layui-icon layui-icon-loading-1 layui-anim layui-anim-rotate layui-anim-loop"></i>
-                        <i class="layui-icon layui-icon-flag"></i>
+                        <span class="admin-card-total-num admin-card-total-dau"></span>
+                        <i class="layui-icon layui-icon-user"></i>
                     </span>
                 </p>
             </div>
