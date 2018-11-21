@@ -19,6 +19,6 @@ class FormAsset extends AssetBundle
         'form.js',
     ];
     public $depends = [
-        'app\assets\LayuiAsset'
+        'app\assets\AppAsset'
     ];
 }

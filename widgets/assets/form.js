@@ -44,28 +44,31 @@ function filterOptions(form) {
                 layui.formSelects.data(key, 'local', {arr: pushArr});
                 formSelects.btns(key, ['select', 'remove'], {show: 'name'});
             }
+            $("#filter-search").trigger('click');
         }
     });
 }
 filterOptions($("#filter-form"));
-layui.formSelects.on('join-filter', function(id, vals, val, isAdd, isDisabled){
+layui.formSelects.on('join-filter', function(){
     filterOptions($("#filter-form"))
 }, true);
 
-layui.formSelects.on('system-filter', function(id, vals, val, isAdd, isDisabled){
+layui.formSelects.on('system-filter', function(){
     filterOptions($("#filter-form"))
 }, true);
 
-layui.formSelects.on('partner-filter', function(id, vals, val, isAdd, isDisabled){
+layui.formSelects.on('partner-filter', function(){
     filterOptions($("#filter-form"))
 }, true);
 
-layui.formSelects.on('platform-filter', function(id, vals, val, isAdd, isDisabled){
+layui.formSelects.on('platform-filter', function(){
     filterOptions($("#filter-form"))
 }, true);
 
 $("#filter-search").click(function () {
-    console.log($(this).parents('form').serialize());
+    for(k in $.triggerList) {
+        $.triggerList[k].trigger('refresh');
+    }
 });
 
 
