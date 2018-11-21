@@ -84,7 +84,7 @@ $("#own-filter-date-quick > button").click(function(){
         end = start;
     }
     $('#filterform-date').val(start + ' - ' +end);
-
+    $("#filter-search").trigger('click');
 });
 
 Date.prototype.Format = function (fmt) {

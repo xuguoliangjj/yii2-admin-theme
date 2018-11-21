@@ -70,6 +70,8 @@ function refreshTable(json) {
             ,data: json
             ,skin: 'row' //表格风格
             ,even: true
+            ,limit:json.length
+            ,height:500
         });
     });
 }
