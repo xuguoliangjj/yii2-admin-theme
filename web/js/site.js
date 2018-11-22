@@ -29,7 +29,7 @@ function refreshSite() {
             refreshTable(json);
         }
     });
-};
+}
 
 function refreshTable(json) {
     layui.use('table', function(){
@@ -71,9 +71,94 @@ function refreshTable(json) {
             ,skin: 'row' //表格风格
             ,even: true
             ,limit:json.length
-            ,height:500
+            ,height:500,
+            done: function(res, curr, count) {
+                refreshChart(this);
+            }
         });
     });
+}
+
+function refreshChart(table) {
+    var chart = echarts.init(document.getElementById('admin-chart-income'));
+    var xAxisData = [];
+    var seriesData = [];
+    var legendData = [];
+    var seriesDataTemp = {};
+    var tempCols = table.cols[0];
+    var cols = {};
+    for (var i in tempCols) {
+        cols[tempCols[i].field] = tempCols[i].title;
+        legendData.push(tempCols[i].title);
+    }
+    var data = table.data;
+    for (var k in data) {
+        var items = data[k];
+        if(items.ymd !== '汇总') {
+            xAxisData.push(items.ymd);
+            for(var i in items) {
+                if(seriesDataTemp[i] === undefined){
+                    seriesDataTemp[i] = [];
+                }
+                seriesDataTemp[i].push(items[i])
+            }
+        }
+    }
+
+    for (var key in seriesDataTemp) {
+        if(key === 'ymd') continue;
+        for (var i in seriesDataTemp[key]) {
+            var val = seriesDataTemp[key][i].toString();
+            val = val.replace('%','');
+            seriesDataTemp[key][i] = val
+        }
+        seriesData.push({
+            name:cols[key],
+            type:'line',
+            data:seriesDataTemp[key]
+        });
+    }
+    option = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type : 'shadow'
+            }
+        },
+        legend: {
+            type: 'scroll',
+            orient: 'vertical',
+            right: 10,
+            top: 20,
+            bottom: 20,
+            data: legendData
+        },
+        grid: {
+            left: '3%',
+            right: '150px',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : xAxisData,
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : seriesData,
+        animationEasing: 'elasticOut'
+
+    };
+    chart.clear();
+    chart.setOption(option);
 }
 var obj = $("body");
 obj.on('refresh',function () {
