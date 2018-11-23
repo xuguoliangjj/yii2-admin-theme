@@ -61,7 +61,7 @@ class RolesController extends BaseController
         } else {
             Yii::$app->session->setFlash('fail', "删除 $id 失败");
         }
-        $this->closeWindows();
+        $this -> redirect(['index']);
     }
 
     /**
