@@ -102,7 +102,7 @@ class BaseController extends Controller
      */
     private function authRoute()
     {
-        if(Yii::$app->request->isAjax) return true;   //放过ajax请求,暂时不做控制
+        //if(Yii::$app->request->isAjax) return true;   //放过ajax请求,暂时不做控制
         if($this->action->id == 'index'){
             $route = trim(str_replace('index','',$this -> route),'/');
         }else{

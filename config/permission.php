@@ -28,6 +28,8 @@ return [
                 'items' =>  [
                     ['label'=>'后台首页','items' => [
                         ['url'=>'/site','label'=>'首页'],
+                        ['url'=>'/site/main','label'=>'首页-关键报表'],
+                        ['url'=>'/filter','label'=>'筛选'],
                     ]]
                 ]
             ]
