@@ -30,7 +30,7 @@ class FilterController extends BaseController
             $arr = [
                 'xm-select' => 'join-filter',
                 [
-                    'name' => '11玩',
+                    'name' => '官方',
                     'value' => '1',
                     'children' => [
 
@@ -43,8 +43,8 @@ class FilterController extends BaseController
                         'xm-select' => 'system-filter',
                         ['value' => '2', 'name' => 'Android', 'children' => [
                             'xm-select' => 'partner-filter',
-                            ['value' => '16', 'name' => '应用宝-16'],
-                            ['value' => '272', 'name' => '应用宝-272']
+                            ['value' => '16', 'name' => '应用宝-1'],
+                            ['value' => '272', 'name' => '应用宝-2']
                         ]]
                     ]
                 ]
@@ -53,13 +53,13 @@ class FilterController extends BaseController
             $arr = [
                 'xm-select' => 'join-filter',
                 [
-                    'name' => '11玩',
+                    'name' => '官方',
                     'value' => '1',
                     'children' => [
                         'xm-select' => 'system-filter',
                         ['value' => '1', 'name' => 'IOS', 'children' => [
                             'xm-select' => 'partner-filter',
-                            ['value' => '108', 'name' => '羽厚亦-正版', 'children' => [
+                            ['value' => '108', 'name' => '官方-正版', 'children' => [
                                 'xm-select' => 'platform-filter',
                                 ['value' => 'com.bundle1', 'name' => '马甲包1'],
                                 ['value' => 'com.bundle2', 'name' => '马甲包2'],
@@ -68,9 +68,9 @@ class FilterController extends BaseController
                         ]],
                         ['value' => '2', 'name' => 'Android', 'children' => [
                             'xm-select' => 'partner-filter',
-                            ['value' => '105', 'name' => '羽厚亦-安卓1'],
-                            ['value' => '105', 'name' => '羽厚亦-安卓2'],
-                            ['value' => '105', 'name' => '羽厚亦-安卓3']
+                            ['value' => '105', 'name' => '官方-安卓1'],
+                            ['value' => '105', 'name' => '官方-安卓2'],
+                            ['value' => '105', 'name' => '官方-安卓3']
                         ]]
                     ]
                 ],
@@ -81,8 +81,8 @@ class FilterController extends BaseController
                         'xm-select' => 'system-filter',
                         ['value' => '2', 'name' => 'Android', 'children' => [
                             'xm-select' => 'partner-filter',
-                            ['value' => '16', 'name' => '应用宝-16'],
-                            ['value' => '272', 'name' => '应用宝-272']
+                            ['value' => '16', 'name' => '应用宝-1'],
+                            ['value' => '272', 'name' => '应用宝-2']
                         ]]
                     ]
                 ]

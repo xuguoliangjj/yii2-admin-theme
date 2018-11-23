@@ -104,9 +104,9 @@ function refreshChart(table) {
             }
         }
     }
-
     for (var key in seriesDataTemp) {
         if(key === 'ymd') continue;
+        if(cols[key] === undefined) continue;
         for (var i in seriesDataTemp[key]) {
             var val = seriesDataTemp[key][i].toString();
             val = val.replace('%','');
