@@ -21,9 +21,9 @@ use \yii\captcha\Captcha;
         ],
     ]); ?>
         <label class="layui-icon layui-icon-username admin-icon-username" for="loginform-username"></label>
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true,'class'=>'layui-input admin-login-input','placeholder'=>'用户名']) ?>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true,'class'=>'layui-input admin-login-input','placeholder'=>'用户名：demo']) ?>
         <label class="layui-icon layui-icon-password admin-icon-password" for="loginform-password"></label>
-        <?= $form->field($model, 'password')->passwordInput(['class'=>'layui-input admin-password-input','placeholder'=>'密码']) ?>
+        <?= $form->field($model, 'password')->passwordInput(['class'=>'layui-input admin-password-input','placeholder'=>'密码：123456']) ?>
         <label class="layui-icon layui-icon-vercode admin-icon-captcha" for="loginform-verifycode"></label>
         <?php echo $form->field($model, 'verifyCode')->widget(Captcha::className(), [
             'captchaAction' => 'site/captcha',
