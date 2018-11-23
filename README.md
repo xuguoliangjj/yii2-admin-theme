@@ -6,6 +6,8 @@
     <br>
 </p>
 
-[![Build Status](https://img.shields.io/badge/yii2--admin--theme-beta--0.0.1-brightgreen.svg)]()
+[![Build Status](https://img.shields.io/badge/yii2--admin--theme-1.0.0-brightgreen.svg)]()
 
-后台示例：http://admin.loadata.com
+
+* 后台示例：http://admin.loadata.com  测试账号：demo  测试密码：123456
+* 交流群：953021758
