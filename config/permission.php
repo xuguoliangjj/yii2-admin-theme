@@ -27,58 +27,7 @@ return [
                 'label' =>  '基础权限',
                 'items' =>  [
                     ['label'=>'后台首页','items' => [
-                        ['url'=>'/admin','label'=>'首页'],
-                    ]]
-                ]
-            ]
-        ]
-    ],
-    [
-        'label' => '游戏管理',
-        'items' => [
-            [
-                'label' =>  '游戏配置',
-                'items' =>  [
-                    ['label'=>'游戏配置','items' => [
-                        ['url'=>'/admin/game','label'=>'首页'],
-                        ['url'=>'/admin/game/view','label'=>'查看详情'],
-                        ['url'=>'/admin/game/update','label'=>'更新游戏'],
-                        ['url'=>'/admin/game/delete','label'=>'删除游戏'],
-                        ['url'=>'/admin/game/create','label'=>'添加新游戏'],
-                        ['url'=>'/admin/game/download','label'=>'下载参数'],
-                        ['url'=>'/admin/game/clean','label'=>'清空缓存'],
-                    ]],
-                    ['label'=>'渠道配置','items' => [
-                        ['url'=>'/admin/partner','label'=>'首页'],
-                        ['url'=>'/admin/partner/view','label'=>'查看详情'],
-                        ['url'=>'/admin/partner/update','label'=>'更新渠道'],
-                        ['url'=>'/admin/partner/delete','label'=>'删除渠道'],
-                        ['url'=>'/admin/partner/create','label'=>'添加新渠道'],
-                        ['url'=>'/admin/partner/config','label'=>'查看配置字段'],
-                        ['url'=>'/admin/partner/para-create','label'=>'添加参数'],
-                        ['url'=>'/admin/partner/para-update','label'=>'更新参数'],
-                        ['url'=>'/admin/partner/para-delete','label'=>'删除参数'],
-                    ]],
-                    ['url'=>'/admin/app-partner-para','label'=>'参数配置','items' => [
-                        ['url'=>'/admin/app-partner-para/view','label'=>'配置'],
-                        ['url'=>'/admin/app-partner-para/clean','label'=>'清空缓存'],
-                    ]]
-                ]
-            ],
-            [
-                'label' =>  '数据管理',
-                'items' =>  [
-                    ['label'=>'用户数据','items' => [
-                        ['url'=>'/admin/sdk-user','label'=>'首页'],
-                        ['url'=>'/admin/deny-login','label'=>'禁止登录'],
-                        ['url'=>'/admin/deny-pay','label'=>'禁止充值'],
-                    ]],
-                    ['label'=>'充值数据','items' => [
-                        ['url'=>'/admin/pay-order','label'=>'首页'],
-                        ['url'=>'/admin/pay-order/push-order','label'=>'补单/补发'],
-                    ]],
-                    ['label'=>'对账日报','items' => [
-                        ['url'=>'/admin/daily','label'=>'首页'],
+                        ['url'=>'/site','label'=>'首页'],
                     ]]
                 ]
             ]
