@@ -9,19 +9,19 @@
 use \app\widgets\ActiveForm;
 use \yii\helpers\Html;
 ?>
-<div class="layui-form-item">
-    <div class="layui-inline">
-        <div class="layui-btn-group" id="own-filter-date-quick">
-            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="0">今日</button>
-            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-1">昨天</button>
-            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-2">前天</button>
-            <button class="layui-btn layui-btn-sm" data-date="-7">近7天</button>
-            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-15">近15天</button>
-            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-30">近30天</button>
-        </div>
-    </div>
-</div>
-
+<!--<div class="layui-form-item">-->
+<!--    <div class="layui-inline">-->
+<!--        <div class="layui-btn-group" id="own-filter-date-quick">-->
+<!--            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="0">今日</button>-->
+<!--            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-1">昨天</button>-->
+<!--            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-2">前天</button>-->
+<!--            <button class="layui-btn layui-btn-sm" data-date="-7">近7天</button>-->
+<!--            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-15">近15天</button>-->
+<!--            <button class="layui-btn layui-btn-primary layui-btn-sm" data-date="-30">近30天</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="layui-row" style="margin-bottom: -25px;">
 <?php $form = ActiveForm::begin([
     'fieldConfig' => [
         'labelOptions' => ['class'=>'layui-form-label']
@@ -55,3 +55,4 @@ use \yii\helpers\Html;
     </div>
 </div>
 <?php ActiveForm::end(); ?>
+</div>
