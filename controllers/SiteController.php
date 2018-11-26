@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\components\BaseController;
+use app\models\ResetPasswordForm;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
@@ -78,6 +80,7 @@ class SiteController extends BaseController
 
         return $this->goHome();
     }
+
 
     /**
      * @return string

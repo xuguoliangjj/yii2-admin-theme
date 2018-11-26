@@ -89,7 +89,6 @@ class BaseController extends Controller
             foreach ($menus as $key => $items) {
                 unset($menus[$key]['items']);
             }
-
             $this->topMenu = $menus;
         }
         return parent::beforeAction($action);
@@ -102,7 +101,6 @@ class BaseController extends Controller
      */
     private function authRoute()
     {
-        //if(Yii::$app->request->isAjax) return true;   //放过ajax请求,暂时不做控制
         if($this->action->id == 'index'){
             $route = trim(str_replace('index','',$this -> route),'/');
         }else{
@@ -147,8 +145,7 @@ class BaseController extends Controller
         if($arr[$index] == 'index'){
             unset($arr[$index]);
             $route = implode('/',$arr);
-            if($route == trim($item['url'][0],'/'))
-            {
+            if($route == trim($item['url'][0],'/')) {
                 return true;
             }
         }else {
@@ -166,11 +163,9 @@ class BaseController extends Controller
      */
     private function normalizeMenu($menus,&$activeTag)
     {
-        foreach($menus as $i => $items)
-        {
+        foreach($menus as $i => $items) {
             $firstUrl = '';
-            foreach($items['items'] as $k => $item)
-            {
+            foreach($items['items'] as $k => $item) {
                 if(!empty($item['items'])) {
                     foreach ($item['items'] as $l => $menu) {
                         if (stripos($this->route,trim($menu['url'][0],'/')) === 0) {   //找出当前路由在哪个菜单下
@@ -182,14 +177,11 @@ class BaseController extends Controller
                             unset($menus[$i]['items'][$k]['items'][$l]);
                             continue;
                         }
-                        if($firstUrl == '')
-                        {
+                        if($firstUrl == '') {
                             $firstUrl = $menu['url'][0];                      //获取第一个url
                         }
-                        if(!isset($menus[$i]['items'][$k]['active']))
-                        {
-                            if($this->isItemActive($menu))
-                            {
+                        if(!isset($menus[$i]['items'][$k]['active'])) {
+                            if($this->isItemActive($menu)) {
                                 $menus[$i]['items'][$k]['active']=true;
                                 $menus[$i]['items'][$k]['items'][$l]['active']=true;
                             }

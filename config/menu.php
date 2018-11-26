@@ -9,15 +9,16 @@
 return [
     'menu'=>[
         'data'=> ['label'=>'主页','items'=>[
-                ['icon'=>'glyphicon glyphicon-cog','label' => '主页',
+                ['label' => '主页',
                     'items' => [
-                        ['label' => '主页概览', 'url' => ['/site']]
+                        ['label' => '主页概览', 'url' => ['/site']],
+                        ['label' => '主页概览', 'url' => ['/site/xxx']]
                     ]
                 ]
             ]
         ],
         'setting'=> ['label'=>'系统设置', 'items'=>[
-                ['icon'=>'glyphicon glyphicon-eye-open','label' => '权限管理',
+                ['label' => '权限管理',
                     'items' => [
                         ['label' => '用户管理', 'url' => ['/admin/user']],
                         ['label' => '角色管理', 'url' => ['/admin/roles']],
@@ -26,9 +27,9 @@ return [
                         ['label' => '规则列表', 'url' => ['/admin/rule']]
                     ]
                 ],
-                ['icon'=>'glyphicon glyphicon-user','label' => '个人中心',
+                ['label' => '个人中心',
                     'items' => [
-                        ['label' => '修改密码', 'url' => ['/admin/site/reset-password']],
+                        ['label' => '修改密码', 'url' => ['/admin/personal/reset-password']],
                     ]
                 ]
             ]

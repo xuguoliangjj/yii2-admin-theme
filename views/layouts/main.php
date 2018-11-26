@@ -45,8 +45,7 @@ AppAsset::register($this);
                     <?= Yii::$app->user->identity->username?>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><?= Html::a('修改密码','/admin/personal/reset-password')?></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
