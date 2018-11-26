@@ -11,8 +11,7 @@ return [
         'data'=> ['label'=>'主页','items'=>[
                 ['label' => '主页',
                     'items' => [
-                        ['label' => '主页概览', 'url' => ['/site']],
-                        ['label' => '主页概览', 'url' => ['/site/xxx']]
+                        ['label' => '主页概览', 'url' => ['/site']]
                     ]
                 ]
             ]
