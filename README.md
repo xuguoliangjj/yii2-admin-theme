@@ -11,6 +11,7 @@
 
 * 后台示例：http://admin.loadata.com  测试账号：demo  测试密码：123456
 * 交流群：953021758
+* 我的博客：http://blog.loadata.com
 
 菜单配置：`config/menu.php`
 
