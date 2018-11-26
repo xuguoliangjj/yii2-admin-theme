@@ -95,7 +95,7 @@ return [
                     [
                         'label' =>  '修改密码',
                         'items' =>  [
-                            ['url'=>'/site/reset-password','label'=>'首页']
+                            ['url'=>'/admin/personal/reset-password','label'=>'首页']
                         ]
                     ]
                 ]
