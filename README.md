@@ -15,16 +15,16 @@
 
 系统截图：
 
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/4/ab/ec76548f28fa7bede57aef350c8e5.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/7/63/8029ba0ec779a8cf6148bcfce17df.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/9/04/2a306600727fc3901712250cefc18.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/2/fb/7f904b7a392163590067d2fb49601.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/a/c8/a816f2a9e1170fa871e369bc97323.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/e/ae/88d05bea4e1901b02b3aeb191b4c7.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/9/92/2ba82d77371a98e45b4644073c204.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/8/fd/9c7f6c0cac106425da8b77d64c5d8.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/8/6d/d1aaa878e1b56709f860fc9983a79.png">
-<img src="http://blog-loadata-com.oss-cn-shanghai.aliyuncs.com/images/d/97/3edb47f52e8d5ded8f301b9c16d9e.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/1.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/2.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/3.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/4.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/5.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/6.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/7.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/8.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/9.png">
+<img src="https://raw.githubusercontent.com/xuguoliangjj/yii2-admin-theme/master/web/img/screenshot/10.png">
 
 菜单配置：`config/menu.php`
 
