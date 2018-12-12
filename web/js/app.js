@@ -70,3 +70,12 @@ $('.searchPage').keyup(function(){
         }
     });
 });
+
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?74de7f42b1a01a1ef0a7dd6adce1dddc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+
