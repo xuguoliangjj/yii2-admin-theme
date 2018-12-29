@@ -206,6 +206,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', '-AyPgUhgAZ3F3439pvlXqoDqW_K4GAM8', '$2y$13$23.BtX8EftLRUZOo5N28JuOef.toRnGYF4aJNyWRcZuBRXS93OlCy', null, '1044748759@qq.com', '110', '10', '10', '1460604540', '1543558364');
+INSERT INTO `user` VALUES ('1', 'admin', 'fLFmsQ1h5jVyDJmoRkE_C04CgoeoKoOz', '$2y$13$1D5OoJClOO7lMT2LtpG2zuEH0ukt/bZs9f2obid5Yde5N08UdRxgS', null, '1044748759@qq.com', '110', '10', '10', '1460604540', '1543558364');
 INSERT INTO `user` VALUES ('320', 'demo', 'fLFmsQ1h5jVyDJmoRkE_C04CgoeoKoOz', '$2y$13$1D5OoJClOO7lMT2LtpG2zuEH0ukt/bZs9f2obid5Yde5N08UdRxgS', null, '', '110', '10', '10', '1542962893', '1542962893');
 SET FOREIGN_KEY_CHECKS=1;
