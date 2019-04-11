@@ -10,7 +10,7 @@
 
 
 * 后台示例：http://admin.loadata.com  测试账号：demo  测试密码：123456
-* 交流群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=74519f0048158d183bfa52a3d56255d2e897f891bfe4348a32d444532a290aab"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Yii专业交流群" title="Yii专业交流群"></a>
+* 交流群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=74519f0048158d183bfa52a3d56255d2e897f891bfe4348a32d444532a290aab"><img border="0">953021758</a>
 * 我的博客：http://blog.loadata.com
 * 数据库：`admin.sql` 自己倒入mysql，然后修改`config/db.php`配置
 
