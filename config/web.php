@@ -4,7 +4,7 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'Admin System',
+    'id' => 'Yii2 Admin Theme',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language'=>'zh-CN',

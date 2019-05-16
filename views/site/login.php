@@ -9,7 +9,7 @@ use \yii\captcha\Captcha;
 ?>
 <div class="site-login">
     <div class="admin-login-box">
-        <h2>Admin System</h2>
+        <h2>Yii2 Admin Theme</h2>
     </div>
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
