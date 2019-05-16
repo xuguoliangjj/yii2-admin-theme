@@ -46,3 +46,6 @@ use \yii\captcha\Captcha;
 
     <?php ActiveForm::end(); ?>
 </div>
+<?php
+$this->registerJs('new Particleground.particle("#bg");')
+?>

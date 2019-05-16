@@ -14,7 +14,9 @@ class LayuiAsset extends AssetBundle
         'layui-src/dist/css/layui.css'
     ];
     public $js = [
-        'layui-src/dist/layui.all.js'
+        'layui-src/dist/layui.all.js',
+        'Particleground.js/production/particleground.js',
+        'Particleground.js/production/particle.js'
     ];
     public $depends = [
         'yii\web\YiiAsset'

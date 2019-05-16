@@ -22,6 +22,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <body class="layui-layout-body">
+<div id="bg" style="width: 100%;height: 100%;position: absolute;overflow: hidden;"></div>
 <div class="layui-layout layui-layout-admin-empty">
         <!-- 内容主体区域 -->
     <div class="layui-body">
