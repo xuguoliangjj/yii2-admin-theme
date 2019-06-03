@@ -11,14 +11,14 @@
 namespace admin\components;
 
 use yii\helpers\VarDumper;
-use yii\base\Object;
+use yii\base\BaseObject;
 use Yii;
 
 /**
  * Class AppRoutes
  * @package admin\components
  */
-class AppRoutes extends Object
+class AppRoutes extends BaseObject
 {
     /**
      * Get list of application routes
